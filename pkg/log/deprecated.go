@@ -80,7 +80,7 @@ func AddHook(hook logrus.Hook) {
 }
 
 // CustomWriterLevel logs writer for a specific level. (with a custom scanner buffer size.)
-// adapted from github.com/Sirupsen/logrus/writer.go.
+
 func CustomWriterLevel(level logrus.Level, maxScanTokenSize int) *io.PipeWriter {
 	reader, writer := io.Pipe()
 
@@ -109,7 +109,7 @@ func CustomWriterLevel(level logrus.Level, maxScanTokenSize int) *io.PipeWriter 
 	return writer
 }
 
-// extract from github.com/Sirupsen/logrus/writer.go
+
 // Hack the buffer size.
 func writerScanner(reader io.ReadCloser, scanTokenSize int, printFunc func(args ...interface{})) {
 	scanner := bufio.NewScanner(reader)
